@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,3 +31,22 @@ Route::get('detail/{nama}', function($nama){
 Route::get('form-siswa', function(){
    return view('form'); 
 });
+
+Route::post('kirim-data', function(Request $request){
+    $data = $request->all();
+    dd($data);
+})->name('kirim');
+
+
+// yang dibutuhkan untuk CRUD.
+
+// 1. buat table di migration, (php artisan make:migration create_nama_table)
+// 2. migrate atau mengirimkan table ke database (php artisan migrate) ,
+// 3. wajib membuat model,
+// 4. Memerlukan controller
+// 5. Tentukan dulu routing, mulai dari penamaan dan action
+// 6. Membuat UI
+
+Route::view('tampilan', 'template.template');
+
+
