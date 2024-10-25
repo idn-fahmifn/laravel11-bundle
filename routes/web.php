@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -49,8 +50,6 @@ Route::post('kirim-data', function(Request $request){
 
 Route::view('tampilan', 'template.template');
 
-Route::get('barang', function() {
-    return view('barang.index');
-});
+Route::get('barang', [BarangController::class, 'index']);
 
 
