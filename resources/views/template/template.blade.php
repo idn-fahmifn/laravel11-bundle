@@ -14,7 +14,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #173158;">
     <div class="container">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -53,38 +54,12 @@
   <div class="container mt-3">
     <div class="row">
       <!-- area-header -->
-      <div class="col-md-12">
-        <div class="card p-2" style="background-color: #173158;">
-          <div class="card-body text-white">
-            <!-- Area Judul -->
-            <h3>Halaman data seluruh barang</h3>
-            <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem aut ullam excepturi debitis autem facilis. Minima, ut ipsa a minus tempora aperiam? Maiores, exercitationem unde! Tempora quaerat quos, repellendus et aut maiores nesciunt eum, soluta natus, doloribus itaque temporibus ex?</p>
-            <div class="button-area">
-              <button class="btn btn-danger">Tambah data</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      @yield('header-area')
       <!-- end-area-header -->
 
       <!-- Area Body -->
-       <div class="col-md-12">
-        <div class="card mt-3">
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <thead>
-                  <th>Nama Barang</th>
-                  <th>Merek</th>
-                  <th>Harga</th>
-                  <th>Pilihan</th>
-                </thead>
-              </table>
-            </div>
-          </div>
-        </div>
-       </div>
-       <!-- End Area -->
+      @yield('body-area')
+      <!-- End Area -->
     </div>
   </div>
 

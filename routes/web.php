@@ -49,4 +49,8 @@ Route::post('kirim-data', function(Request $request){
 
 Route::view('tampilan', 'template.template');
 
+Route::get('barang', function() {
+    return view('barang.index');
+});
+
 
