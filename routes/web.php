@@ -50,6 +50,10 @@ Route::post('kirim-data', function(Request $request){
 
 Route::view('tampilan', 'template.template');
 
+// route untuk menjalankan function index di Barang Controller
 Route::get('barang', [BarangController::class, 'index']);
+
+// Route untuk menjalankan function store
+Route::post('kirim-barang', [BarangController::class, 'store'])->name('kirim-barang');
 
 
