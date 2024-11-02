@@ -43,4 +43,12 @@ class BarangController extends Controller
 
         return back()->with('success', 'data berhasil diubah');
     }
+
+    public function delete($id)
+    {
+        $data = Barang::find($id);
+        $data->delete();
+        return back()->with('success', 'Data berhasil dihapus');
+    }
+
 }
