@@ -8,7 +8,11 @@ use Illuminate\Http\Request;
 class BarangController extends Controller
 {
     public function index() {
-        return view('barang.index');
+
+        // deklarasi variabel untuk menampung data.
+
+        $data = Barang::all();
+        return view('barang.index', compact('data'));
     }
 
     // fungsi untuk menyimpan data ke tabel
@@ -17,7 +21,12 @@ class BarangController extends Controller
         $data = $request->all();
         Barang::create($data);
         return back();
+    }
 
+    public function show($id)
+    {
+        $data = Barang::find($id);
+        return view('barang.detail', compact('data'));
     }
 
 }

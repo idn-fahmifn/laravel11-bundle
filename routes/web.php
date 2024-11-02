@@ -48,6 +48,8 @@ Route::post('kirim-data', function(Request $request){
 // 5. Tentukan dulu routing, mulai dari penamaan dan action
 // 6. Membuat UI
 
+
+
 Route::view('tampilan', 'template.template');
 
 // route untuk menjalankan function index di Barang Controller
@@ -55,5 +57,6 @@ Route::get('barang', [BarangController::class, 'index']);
 
 // Route untuk menjalankan function store
 Route::post('kirim-barang', [BarangController::class, 'store'])->name('kirim-barang');
+Route::get('barang/{param}', [BarangController::class, 'show'])->name('detail-barang');
 
 
