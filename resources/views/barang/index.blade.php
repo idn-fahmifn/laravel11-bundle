@@ -37,12 +37,17 @@
                             <td>{{$item->merek}}</td>
                             <td>IDR {{$item->harga}}</td>
                             <td>
-                                <a href="" class="btn btn-info">Detail</a>
+                                <form action="{{route('hapus-barang',$item->id)}}" method="post">
+                                    @csrf
+                                    {{method_field('delete')}}
+
+                                    <a href="" class="btn btn-info">Detail</a>
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+
+                                </form>
                             </td>
                         </tr>
                         @endforeach
-
-
                     </tbody>
                 </table>
             </div>
