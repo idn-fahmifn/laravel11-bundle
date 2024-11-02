@@ -59,5 +59,6 @@ Route::get('barang', [BarangController::class, 'index']);
 Route::post('kirim-barang', [BarangController::class, 'store'])->name('kirim-barang');
 Route::get('barang/{param}', [BarangController::class, 'show'])->name('detail-barang');
 Route::put('update-barang/{param}', [BarangController::class, 'update'])->name('update-barang');
+Route::delete('hapus-barang/{param}', [BarangController::class, 'delete'])->name('hapus-barang');
 
 
