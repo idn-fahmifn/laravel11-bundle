@@ -58,5 +58,6 @@ Route::get('barang', [BarangController::class, 'index']);
 // Route untuk menjalankan function store
 Route::post('kirim-barang', [BarangController::class, 'store'])->name('kirim-barang');
 Route::get('barang/{param}', [BarangController::class, 'show'])->name('detail-barang');
+Route::put('update-barang', [BarangController::class, 'update'])->name('update-barang');
 
 

@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class BarangController extends Controller
 {
-    public function index() {
+    public function index()
+    {
 
         // deklarasi variabel untuk menampung data.
 
@@ -16,7 +17,8 @@ class BarangController extends Controller
     }
 
     // fungsi untuk menyimpan data ke tabel
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // variabel dibawah untuk memanggil data yang disimpan di Request
         $data = $request->all();
         Barang::create($data);
@@ -29,4 +31,16 @@ class BarangController extends Controller
         return view('barang.detail', compact('data'));
     }
 
+    public function update(Request $request, $id)
+    {
+        $input = $request->all(); //untuk mengambil nilai yang diinputkan.
+
+        //mencari data yang spesifik untuk diganti (berdasarkan id)
+        $data = Barang::find($id);
+
+        //meng-update data lama dengan data baru yang diambil dari $input
+        $data->update($input); 
+
+        return back()->with('success', 'data berhasil diubah');
+    }
 }

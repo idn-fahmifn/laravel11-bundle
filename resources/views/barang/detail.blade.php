@@ -50,11 +50,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Barang</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit barang</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="#" method="post">
+            <form action="{{route('update-barang', $data->id)}}" method="post">
                 @csrf
                 {{method_field('put')}}
                 <div class="modal-body">
